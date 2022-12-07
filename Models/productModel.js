@@ -22,7 +22,12 @@ const productSchema = mongoose.Schema({
     image:{
         type:String,
         required:true
+    },
+    vendorid:{
+        type:String,
+        required:true
     }
+
 },{timestamp: true}
 );
 
