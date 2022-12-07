@@ -1,6 +1,6 @@
 const register  = require('../Models/customerModel');
 
-const registerCustomerData = async (req, res) => {
+const registerCustomerController = async (req, res) => {
     try{
         const newCustomer = new register(req.body);
         await newCustomer.save();
@@ -12,6 +12,24 @@ const registerCustomerData = async (req, res) => {
     }
 }
 
+const registerCustomerLogin = async (req, res) => {
+    try{
+           const {username, password } = req.body;
+           const customer = await register.findOne(username, password);
+           if(customer){
+            res.status(200).send(user);
+           }else{
+            res.json({
+                message: "Login Fail"
+              });
+           }
+    }
+    catch(error){
+        console.log(error)
+    }
+}
+
 module.exports = {
-    registerCustomerData
+    registerCustomerController,
+    registerCustomerLogin
 }
