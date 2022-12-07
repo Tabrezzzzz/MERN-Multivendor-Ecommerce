@@ -11,7 +11,7 @@ const connectDb = async() => {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
-        console.log(`MogoDB Connected`)
+        console.log(`MogoDB is Connected`)
     } catch (error){
         console.log(`Error : ${error}`);
         process.exit(1);
