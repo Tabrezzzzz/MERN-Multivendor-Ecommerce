@@ -17,7 +17,7 @@ const registerCustomerLogin = async (req, res) => {
            const {username, password } = req.body;
            const customer = await register.findOne(username, password);
            if(customer){
-            res.status(200).send(user);
+            res.status(200).send(user)
            }else{
             res.json({
                 message: "Login Fail"
