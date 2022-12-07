@@ -8,7 +8,7 @@ const router = express.Router();
 
 
 
-// router.post("/customer-register", registerCustomerController);
+router.post("/customer-register", registerCustomerController);
 router.post("/customer-login", loginCustomerController);
 
 module.exports = router;
