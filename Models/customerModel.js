@@ -7,7 +7,7 @@ const registerSchema = mongoose.Schema({
     },
     username:{
         type:String,
-        required:true,
+        required:true,                                                                                                                                                                                              
 
     },
     email:{
