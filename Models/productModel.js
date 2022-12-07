@@ -23,7 +23,7 @@ const productSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    vendorid:{
+    vendorId:{
         type:String,
         required:true
     }
