@@ -16,7 +16,7 @@ const vendorRegisterSchema = mongoose.Schema({
     },
     password:{
         type:String,
-        required:true
+        required:true,
     }
 },{timestamp: true}
 );
