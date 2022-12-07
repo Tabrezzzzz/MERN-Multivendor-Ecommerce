@@ -1,13 +1,19 @@
-const customer  = require('../Models/vendorModel');
+const vendorModel  = require('../Models/vendorModel');
+const bcrypt = require("bcryptjs");
 
 const registerVendorController = async (req, res) => {
     try{
-        const newVendor = new register(req.body);
-        await newVendorr.save();
-        res.status(201).send("Your Account Created Successfuly")
-       
-    }
-    catch(error){
+    const {companyname,  email, userid, password } = req.body;
+    const hashed_password = await bcrypt.hash(password, 10);
+    const newVendor = await new vendorModel({
+        companyname,
+        email,
+        userid,
+        password: hashed_password,
+   });
+   await newVendor.save();
+        res.status(201).json({message: "Your Vendor Account Created Successfuly"})
+}catch(error){  
         console.log(error);
     }
 }

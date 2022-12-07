@@ -1,11 +1,10 @@
 const express = require("express");
-
 const {
-    registerVendorData
+    registerVendorController
 } = require('../Controllers/vendorController')
 
 const router = express.Router();
 
 router.post("/vendor-register", registerVendorController);
 
-module.export = router;
+module.exports = router;
