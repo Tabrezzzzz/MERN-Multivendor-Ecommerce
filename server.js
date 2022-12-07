@@ -24,6 +24,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/customer", require('./Routes/customerRoutes'))
+app.use("/api/vendor", require('./Routes/vendorRoutes'))
 
 app.listen(8080, () => {
     console.log(`Server running on ${8080}`);

@@ -5,6 +5,8 @@ const {
 
 const router = express.Router();
 
+
+
 router.post("/vendor-register", registerVendorController);
 
 module.exports = router;
