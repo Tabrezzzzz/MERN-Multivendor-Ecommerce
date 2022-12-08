@@ -9,6 +9,7 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import React from 'react'
 import { FaBeer, FaCartArrowDown, FaIdBadge, FaSearch,  } from 'react-icons/fa';
 import { RxAvatar } from "react-icons/rx";
+import { Routes, Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -42,7 +43,7 @@ export const Navbar = () => {
     <Text fontWeight="700" marginLeft='5px'>Cart</Text>
   </Square>
    <Square bg='transparent' width='10%'>
-      <RxAvatar fontSize='25px' marginTop='-10px'/><Text className='Login-btn'>Login</Text>
+      <RxAvatar fontSize='25px' marginTop='-10px'/><Text className='Login-btn'><Link to="/login-register">Login/Register</Link></Text>
   </Square>
   
 </Flex>
