@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const vendorRegisterSchema = mongoose.Schema({
-    companyname:{
+    companyId:{
         type: String,
         required:true
     },
@@ -10,7 +10,7 @@ const vendorRegisterSchema = mongoose.Schema({
         required:true,
 
     },
-    userid:{
+    companyName:{
         type:String,
         required:true
     },

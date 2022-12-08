@@ -3,30 +3,36 @@ const bcrypt = require("bcryptjs");
 
 const registerVendorController = async (req, res) => {
     try{
-    const {companyname,  email, userid, password } = req.body;
+    const {companyId,  email, companyName, password } = req.body;
+    const emailExist = await vendorModel.findOne({email})
+        if(emailExist){
+            res.json({messsage:"email already exist"})
+        }else{
     const hashed_password = await bcrypt.hash(password, 10);
     const newVendor = await new vendorModel({
-        companyname,
+        companyId,
         email,
-        userid,
+        companyName,
         password: hashed_password,
    });
-   await newVendor.save();
-        res.status(201).json({message: "Your Vendor Account Created Successfuly"})
+   newVendor.save();
+   res.status(201).json({message: "Your Vendor Account Created Successfuly"})
+}
 }catch(error){  
         console.log(error);
     }
 }
 
-const registerVendorLogin = async (req, res) => {
+const LoginVendorController = async (req, res) => {
     try{
-           const {username, password } = req.body;
-           const vendor = await register.findOne(username, password);
-           if(vendor){
-            res.status(200).send(user);
+           const {companyId, password } = req.body;
+           const vendor = await vendorModel.findOne({companyId});
+           const isMatch = await bcrypt.compare(password, vendor.password);
+           if(isMatch){
+            res.status(200).send(vendor);
            }else{
             res.json({
-                message: "Login Fail"
+                message: "Company ID does not exist"
               });
            }
     }
@@ -36,5 +42,6 @@ const registerVendorLogin = async (req, res) => {
 }
 module.exports = {
     registerVendorController,
-    registerVendorLogin
+    LoginVendorController
+    
 }
