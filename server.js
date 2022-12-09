@@ -26,6 +26,6 @@ app.use(express.json());
 app.use("/api/customer", require('./Routes/customerRoutes'))
 app.use("/api/vendor", require('./Routes/vendorRoutes'))
 
-app.listen(8080, () => {
-    console.log(`Server running on ${8080}`);
+app.listen(3001, () => {
+    console.log(`Server running on ${3001}`);
   });

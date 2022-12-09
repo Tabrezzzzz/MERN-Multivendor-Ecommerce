@@ -13,9 +13,22 @@ import mobile from "../assests/image/category/mobile.jpg"
 import cloth from "../assests/image/category/cloth.jpg"
 import eletronic from "../assests/image/category/eletronics.webp"
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+
 
 export const Categories = () => {
 
+<<<<<<< HEAD
+=======
+
+
+useEffect(async () => {
+const {data} = await axios.get("https://fakestoreapi.com/products?limit=8")
+setproducts(data)
+},[])
+
+    console.log(products)
+>>>>>>> 69116cbfd4a5f7ec664d8e5847ef7838ddcbf1be
   return (
     
     <Container className='category-main-container' bg='white' color='#262626' maxWidth="1500px !important"  height="160px">

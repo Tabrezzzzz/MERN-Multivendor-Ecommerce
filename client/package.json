@@ -10,6 +10,10 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
+=======
+    "axios": "^1.2.1",
+>>>>>>> 69116cbfd4a5f7ec664d8e5847ef7838ddcbf1be
     "formik": "^2.2.9",
     "framer-motion": "^7.6.19",
     "react": "^18.2.0",
