@@ -47,7 +47,7 @@ import axios from '../API Server/axios';
   <Text mb="20px" fontSize={"30px"} fontWeight={500} textAlign={"center"}>LOGIN</Text>
   <form onSubmit={formik.handleSubmit}>
   <FormControl >
-  <FormLabel>Username</FormLabel>
+  <FormLabel>Usernam</FormLabel>
   <Input name='username' type='text' onChange={formik.handleChange} value={formik.values.username} />
   <FormLabel>Password</FormLabel>
   <Input name='password' onChange={formik.handleChange} value={formik.values.password} type='password' />
