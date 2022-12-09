@@ -17,18 +17,7 @@ import axios from 'axios'
 
 
 export const Categories = () => {
-
-<<<<<<< HEAD
-=======
-
-
-useEffect(async () => {
-const {data} = await axios.get("https://fakestoreapi.com/products?limit=8")
-setproducts(data)
-},[])
-
-    console.log(products)
->>>>>>> 69116cbfd4a5f7ec664d8e5847ef7838ddcbf1be
+ 
   return (
     
     <Container className='category-main-container' bg='white' color='#262626' maxWidth="1500px !important"  height="160px">
