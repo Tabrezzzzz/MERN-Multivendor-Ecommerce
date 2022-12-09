@@ -13,16 +13,17 @@ import mobile from "../assests/image/category/mobile.jpg"
 import cloth from "../assests/image/category/cloth.jpg"
 import eletronic from "../assests/image/category/eletronics.webp"
 import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+
 
 export const Categories = () => {
 const [products, setproducts] = useState([])
 
 
 
-useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=8')
-    .then(res=>res.json())
-    .then(json=>setproducts(json))
+useEffect(async () => {
+const {data} = await axios.get("https://fakestoreapi.com/products?limit=8")
+setproducts(data)
 },[])
 
     console.log(products)
