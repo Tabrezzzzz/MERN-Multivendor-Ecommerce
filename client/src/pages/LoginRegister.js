@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar } from '../components/Navbar'
-import { Categories} from '../components/Categories'
+import { Loginform } from '../components/Loginform';
 import { Routes, Link } from "react-router-dom";
 import {
     FormControl,
@@ -8,20 +8,13 @@ import {
     FormErrorMessage,
     FormHelperText,
     Input   
-  } from '@chakra-ui/react'
+  } from '@chakra-ui/react'  
   export const LoginRegister = () => {
     return (
   <>
     <Navbar />
+    <Loginform />
   
-  <FormControl>
-  <FormLabel>Email address</FormLabel>
-  <Input type='email' />
-  <FormHelperText>We'll never share your email.</FormHelperText>
-  <FormLabel>Email address</FormLabel>
-  <Input type='email' />
-  <FormHelperText>We'll never share your email.</FormHelperText>
-</FormControl>
 </>
  )
 }
