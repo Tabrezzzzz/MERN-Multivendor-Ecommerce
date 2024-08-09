@@ -1,12 +1,16 @@
 const express = require("express");
 const {
-    registerCustomerData
+    registerCustomerController,
+    loginCustomerController,
+    forgotPasswordController
 } = require('../Controllers/customerControllers')
 
 const router = express.Router();
 
 
 
-router.post("/user-register", registerCustomerData);
+router.post("/customer-register", registerCustomerController);
+router.post("/customer-login", loginCustomerController);
+router.post("/forgot-password", forgotPasswordController);
 
 module.exports = router;

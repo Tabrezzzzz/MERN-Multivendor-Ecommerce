@@ -11,7 +11,7 @@ const connectDb = async() => {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });
-        console.log(`MogoDB is Connected`)
+        console.log(`MogoDB Connected`)
     } catch (error){
         console.log(`Error : ${error}`);
         process.exit(1);
@@ -24,7 +24,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/customer", require('./Routes/customerRoutes'))
+app.use("/api/vendor", require('./Routes/vendorRoutes'))
 
-app.listen(8080, () => {
-    console.log(`Server running on ${8080}`);
+app.listen(3001, () => {
+    console.log(`Server running on ${3001}`);
   });
